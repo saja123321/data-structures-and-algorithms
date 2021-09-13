@@ -8,7 +8,7 @@ Write a function called sortStarWarsCharacters that sorts the characters in the 
 
 let starWarsPeople = [
   {
-    'name': 'C-3PO',
+     'name': 'C-3PO',
     'height': '167',
     'eye_color': 'yellow'
   },
@@ -25,9 +25,9 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  return starWarsArr.sort((h1, h2) => { return h2.height - h1.height; });
-};
-
+  return starWarsArr.sort((h1, h2) => { return h2.height - h1.height })
+}
+ 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -46,7 +46,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  return arr.join(' ');
+   return arr.join(' ');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,7 +80,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  return arr.split('');
+   return arr.split('');
+ 
 };
 
 
@@ -256,7 +258,8 @@ describe('Testing challenge 1', () => {
   test('It should sort the star wars characters by height from tallest to shortest', () => {
     expect(sortStarWarsCharacters(starWarsPeople)[0]['name']).toStrictEqual('Luke Skywalker');
     expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual('96');
-  });
+   });
+ 
 });
 
 describe('Testing challenge 2', () => {
