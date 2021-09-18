@@ -62,7 +62,7 @@ const sortByChildren = (charArray) => {
 CHALLENGE 2
 
 Write a function named containsW that takes in a string.
- This function should use a regular expression pattern to return true 
+ This function should use a regular expression pattern to return true
  if the string contains the letter 'w' in lower case or false if it does not.
 
 ------------------------------------------------------------------------------------------------ */
@@ -202,12 +202,12 @@ Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-// describe('Testing challenge 1', () => {
-//   test('It should sort the characters by number of children', () => {
-//     expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
-//     expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
-//   });
-// });
+describe('Testing challenge 1', () => {
+  test('It should sort the characters by number of children', () => {
+    expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
+    expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
+  });
+});
 
 describe('Testing challenge 2', () => {
   test('It should return true if the input contains a lower case w', () => {
