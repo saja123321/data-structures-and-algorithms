@@ -5,7 +5,7 @@ Write a function called sortStarWarsCharacters that sorts the characters in the 
 ------------------------------------------------------------------------------------------------ */
 let starWarsPeople = [
   {
-    'name': 'C-3PO',
+     'name': 'C-3PO',
     'height': '167',
     'eye_color': 'yellow'
   },
@@ -23,6 +23,9 @@ let starWarsPeople = [
 const sortStarWarsCharacters = (starWarsArr) => {
   return starWarsArr.sort((h1, h2) => { return h2.height - h1.height; });
 };
+
+ 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index.
@@ -36,7 +39,8 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 const joinArray = (arr) => {
-  return arr.join(' ');
+   return arr.join(' ');
+
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,7 +65,8 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 const wordsToCharList = (arr) => {
-  return arr.split('');
+   return arr.split('');
+ 
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -189,7 +194,8 @@ describe('Testing challenge 1', () => {
   test('It should sort the star wars characters by height from tallest to shortest', () => {
     expect(sortStarWarsCharacters(starWarsPeople)[0]['name']).toStrictEqual('Luke Skywalker');
     expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual('96');
-  });
+   });
+ 
 });
 describe('Testing challenge 2', () => {
   test('It should return an array with three items removed', () => {
