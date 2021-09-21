@@ -1,56 +1,39 @@
 'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
-
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
-
 const replaceZeros = (string) => {
   const reg = /0/g;
   const newStr = string.replace(reg, 'zero');
   return newStr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
 Write a function named validatePin that uses a regular expression pattern to validate a PIN.
-
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
-
 const validatePin = (pin) => {
   return (/^[0-9]{4}$/.test(pin));
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
 Write a function named validateWord that uses a regular expression pattern to validate that a word is between 5 and 10 characters long.
-
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
-
 const validateWord = (word) => {
   return (/\b[a-zA-Z]{5,10}\b/.test(word));
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
 Write a function named hasNumber that uses a regular expression pattern to determine if a string has one or more letter followed by one or more digit.
-
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
-
 const hasNumber = (string) => {
   return (/[a-zA-Z]{1}[\d]{1}/.test(string));
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
 Write a function named validateEmail that takes in an email address and validates it based
 on several rules:
   - one word, or two words separated by a period, before the @ symbol
@@ -58,21 +41,15 @@ on several rules:
   - can have any of the following top-level domains: .net, .com, or .org
   - no other special characters
   - no subdomains, ports, etc: must be of the form name@place.com, not name@sub.place.com:3000
-
 Return either true or false.
-
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
-
 const validateEmail = (email) => {
   return /^\w+\.?\w+@\w+.(com|net|org)$/.test(email);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
 Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
-
 Acceptable formats include:
  - (555) 555-5555
  - (555)555 5555
@@ -83,45 +60,32 @@ Acceptable formats include:
  - 555 555 5555
  - 555555-5555
  - 5555555555
-
 Your function should include a single regular expression pattern that matches any of these formats.
-
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
-
 const validatePhoneNumber = (phoneNumber) => {
   return /^(\((\d{3})\)[\s]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/.test(phoneNumber);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
-
 Write a function named findTagNames that iterates over an array of HTML strings and uses a regular expression pattern to return the closing tags.
-
 For example, findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>']) returns ['/h1', '/p'].
 findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']) returns ['/h1', '/div', '/p'].
 ------------------------------------------------------------------------------------------------ */
-
 const findTagNames = elements => {
   // Solution code here...
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
 All the code below will verify that your functions are working to solve the challenges.
-
 DO NOT CHANGE any of the below code.
-
 Run your tests from the console: jest solutions-11.test.js
 ------------------------------------------------------------------------------------------------ */
-
 describe('Testing challenge 1', () => {
   test('It should replace all the 0\'s with the word "zero"', () => {
     expect(replaceZeros('301 is s0 much fun!')).toStrictEqual('3zero1 is szero much fun!');
   });
 });
-
 describe('Testing challenge 2', () => {
   test('It should validate a PIN of exactly four digits', () => {
     expect(validatePin(1234)).toBeTruthy();
@@ -134,7 +98,6 @@ describe('Testing challenge 2', () => {
     expect(validatePin('0000')).toBeTruthy();
   });
 });
-
 describe('Testing challenge 3', () => {
   test('It should validate a word between 5 and 10 characters', () => {
     expect(validateWord('Hello')).toBeTruthy();
@@ -146,7 +109,6 @@ describe('Testing challenge 3', () => {
     expect(validateWord('Code301')).toBeFalsy();
   });
 });
-
 describe('Testing challenge 4', () => {
   test('It should return true if a string has one or more word characters followed by one or more digits', () => {
     expect(hasNumber('Hell0')).toBeTruthy();
@@ -159,24 +121,19 @@ describe('Testing challenge 4', () => {
     expect(hasNumber('99Code')).toBeFalsy();
   });
 });
-
 describe('Testing challenge 5', () => {
   test('It should match a basic email', () => {
     expect(validateEmail('joe@codefellows.com')).toBeTruthy();
   });
-
   test('It should match if the email contains a period', () => {
     expect(validateEmail('joe.schmoe@codefellows.net')).toBeTruthy();
   });
-
   test('It should match if the email contains other top-level domains', () => {
     expect(validateEmail('joe@codefellows.org')).toBeTruthy();
   });
-
   test('It should match if the email contains a period and other top-level domains', () => {
     expect(validateEmail('joe.schmoe@codefellows.net')).toBeTruthy();
   });
-
   test('It should fail things that aren\'t email addresses', () => {
     expect(validateEmail('justastring')).toBeFalsy();
     expect(validateEmail('missing@adomain')).toBeFalsy();
@@ -190,7 +147,6 @@ describe('Testing challenge 5', () => {
     expect(validateEmail('no.middle.names@foryou.com')).toBeFalsy();
   });
 });
-
 describe('Testing challenge 6', () => {
   test('It should match the acceptable phone number formats', () => {
     expect(validatePhoneNumber('(555) 555-5555')).toBeTruthy();
@@ -214,7 +170,6 @@ describe('Testing challenge 6', () => {
     expect(validatePhoneNumber('55_55_5555')).toBeFalsy();
   });
 });
-
 xdescribe('Testing challenge 7', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
