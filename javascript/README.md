@@ -15,21 +15,17 @@ Each type of code challenge has slightly different instructions. Please refer to
   - Your implementation must be completed as a proper ES6 Class, and exported as a node module
     - Class Name must be `ProperCase`
     - Class Methods must be `camelCase`
-
     ```javascript
     class LinkedList {
       constructor() {
         // code
       }
-
       methodName() {
         // code
       }
-
     }
     module.exports = LinkedList;
     ```
-
 - Tests
   - Create folder named `__tests__` and within it, a test file called `[data-structure].test.js`
     - i.e. `__tests__/linked-list.test.js`
@@ -72,8 +68,7 @@ Code challenges should be completed within a folder named `code-challenges` unde
 
 ## Running Tests
 
-If you setup your folders according to the above guidelines, running tests becomes a matter of deciding which tests you want to execute.  Jest does a good job at finding the test files that match what you specify in the test command
-
+If you setup your folders according to the above guidelines, running tests becomes a matter of deciding which tests you want to execute. Jest does a good job at finding the test files that match what you specify in the test command
 From the `data-structures-and-algorithms/javascript` folder, execute the following commands:
 
 - **Run every possible test** - `npm test`
@@ -82,4 +77,4 @@ From the `data-structures-and-algorithms/javascript` folder, execute the followi
 
 #### Live Tests
 
-Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the  **Actions** tab
+Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the **Actions** tab
